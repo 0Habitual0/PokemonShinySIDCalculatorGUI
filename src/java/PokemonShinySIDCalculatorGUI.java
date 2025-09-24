@@ -48,7 +48,7 @@ public class PokemonShinySIDCalculatorGUI {
     private void calculate(int condition, boolean isEquals) {
         try {
             int tId = Integer.parseInt(tidField.getText());
-            long pId = Long.parseLong(pidField.getText().substring(2), 16);
+            long pId = Long.parseLong(pidField.getText(), 16);
 
             int p1 = (int)(pId >>> 16);
             int p2 = (int)(pId & 0xFFFF);
