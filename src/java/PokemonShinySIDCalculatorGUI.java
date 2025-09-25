@@ -54,13 +54,14 @@ public class PokemonShinySIDCalculatorGUI {
             int p2 = (int)(pId & 0xFFFF);
             int p1_xor_p2 = p1 ^ p2;
 
-            resultArea.setText("SID范围：\n");
+            StringBuilder sb = new StringBuilder("SID范围：\n");
             for (int i = 0; i <= 65536; i++) {
                 int xorResult = (tId ^ i) ^ p1_xor_p2;
                 if (isEquals ? xorResult == condition : xorResult < condition) {
-                    resultArea.append(i + "\n");
+                    sb.append(i).append("\n");
                 }
             }
+            resultArea.setText(sb.toString());
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(frame, "输入的PID和TID必须是有效的数值", "错误", JOptionPane.ERROR_MESSAGE);
         }
