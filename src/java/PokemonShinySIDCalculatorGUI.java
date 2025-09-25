@@ -9,7 +9,7 @@ public class PokemonShinySIDCalculatorGUI {
     private final JTextArea resultArea;
 
     public PokemonShinySIDCalculatorGUI() {
-        frame = new JFrame("宝可梦闪光SID计算器");
+        frame = new JFrame("闪光SID倒推计算器");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 280);
 
@@ -26,10 +26,10 @@ public class PokemonShinySIDCalculatorGUI {
         panel.add(pidField);
         panel.add(new JLabel("请输入TID:"));
         panel.add(tidField);
-        panel.add(createButton("三代后 < 8为闪", 8, false));
-        panel.add(createButton("六代后 < 16 为闪", 16, false));
-        panel.add(createButton("八代 == 0 为方闪", 0, true));
-        panel.add(createButton("八代大冒险 == 1 为闪", 1, true));
+        panel.add(createButton("Gen3后Gen6前 < 8为闪", 8, false));
+        panel.add(createButton("Gen6后 < 16 为闪", 16, false));
+        panel.add(createButton("Gen8 == 0 为方闪", 0, true));
+        panel.add(createButton("Gen8大冒险 == 1 为闪", 1, true));
         panel.add(new JScrollPane(resultArea));
 
         frame.getContentPane().add(panel);
